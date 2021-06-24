@@ -7,10 +7,14 @@
 
 import Foundation
 
+enum WeatherError: Error {
+    case CityNotFound
+}
+
 class WeatherController: ObservableObject {
     @Published var weather: [WeatherModel] = [WeatherModel]()
     
-    func addCity(_ city: String) throws {
+    func addCity(_ city: String) {
         if let weatherModel = fetchWeather(city: city) {
             weather.append(weatherModel)
         }
@@ -50,4 +54,10 @@ class WeatherController: ObservableObject {
         return model
     }
     
+    init() {
+        addCity("London")
+        addCity("Paris")
+        addCity("Berlin")
+        addCity("Tokyo")
+    }
 }

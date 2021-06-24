@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    private var apiKey: String = "TODO: API KEY HERE"
+    private var apiKey: String = Bundle.main.fetchAPIKey()
     @State private var model: WeatherModel?
     var body: some View {
         NavigationView {
@@ -23,6 +23,7 @@ struct ContentView: View {
             }
             .navigationBarItems(leading: Button("Fetch") {
                 print("Fetching Data...")
+                print("API Key: \(apiKey)")
                 let url = "https://api.openweathermap.org/data/2.5/weather?q=london&units=metric&appid=\(apiKey)"
                 
                 guard let url = URL(string: url) else {

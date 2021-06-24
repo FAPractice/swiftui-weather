@@ -15,6 +15,10 @@
 		34C7A55526844C4B0066CA90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34C7A53F26844C4B0066CA90 /* Assets.xcassets */; };
 		34C7A562268460660066CA90 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C7A561268460660066CA90 /* WeatherModel.swift */; };
 		34C7A563268460660066CA90 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C7A561268460660066CA90 /* WeatherModel.swift */; };
+		34FA0DF5268483FE007CE318 /* FetchAPIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FA0DF4268483FE007CE318 /* FetchAPIKey.swift */; };
+		34FA0DF6268483FE007CE318 /* FetchAPIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FA0DF4268483FE007CE318 /* FetchAPIKey.swift */; };
+		34FA0DF82684871E007CE318 /* apikey.txt in Resources */ = {isa = PBXBuildFile; fileRef = 34FA0DF72684871E007CE318 /* apikey.txt */; };
+		34FA0DF92684871E007CE318 /* apikey.txt in Resources */ = {isa = PBXBuildFile; fileRef = 34FA0DF72684871E007CE318 /* apikey.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +31,8 @@
 		34C7A54E26844C4B0066CA90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34C7A54F26844C4B0066CA90 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		34C7A561268460660066CA90 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		34FA0DF4268483FE007CE318 /* FetchAPIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAPIKey.swift; sourceTree = "<group>"; };
+		34FA0DF72684871E007CE318 /* apikey.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = apikey.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +68,9 @@
 			children = (
 				34C7A53D26844C4A0066CA90 /* WeatherApp.swift */,
 				34C7A53E26844C4A0066CA90 /* ContentView.swift */,
+				34FA0DF4268483FE007CE318 /* FetchAPIKey.swift */,
 				34C7A561268460660066CA90 /* WeatherModel.swift */,
+				34FA0DF72684871E007CE318 /* apikey.txt */,
 				34C7A53F26844C4B0066CA90 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -173,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34C7A55426844C4B0066CA90 /* Assets.xcassets in Resources */,
+				34FA0DF82684871E007CE318 /* apikey.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34C7A55526844C4B0066CA90 /* Assets.xcassets in Resources */,
+				34FA0DF92684871E007CE318 /* apikey.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34C7A55226844C4B0066CA90 /* ContentView.swift in Sources */,
+				34FA0DF5268483FE007CE318 /* FetchAPIKey.swift in Sources */,
 				34C7A55026844C4B0066CA90 /* WeatherApp.swift in Sources */,
 				34C7A562268460660066CA90 /* WeatherModel.swift in Sources */,
 			);
@@ -202,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34C7A55326844C4B0066CA90 /* ContentView.swift in Sources */,
+				34FA0DF6268483FE007CE318 /* FetchAPIKey.swift in Sources */,
 				34C7A55126844C4B0066CA90 /* WeatherApp.swift in Sources */,
 				34C7A563268460660066CA90 /* WeatherModel.swift in Sources */,
 			);

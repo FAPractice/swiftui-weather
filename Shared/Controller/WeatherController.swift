@@ -16,11 +16,18 @@ class WeatherController: ObservableObject {
     
     func addCity(_ city: String) {
         if let weatherModel = fetchWeather(city: city) {
+            print("Adding Item: ", weatherModel)
             weather.append(weatherModel)
+            print("New List: ", weather)
+        } else {
+            print("Unpacking Failed")
         }
+        print(weather)
     }
     
     private func fetchWeather(city: String, unit: String = "metric") -> WeatherModel? {
+        print("-------------fetchWeather(\(city), \(unit))-------------\n")
+        
         let apiKey: String = Bundle.main.fetchAPIKey()
         var model: WeatherModel?
         
@@ -36,22 +43,27 @@ class WeatherController: ObservableObject {
         let request = URLRequest(url: url)
         
         URLSession.shared.dataTask(with: request) { data, res, err in
-            if err != nil {
-                print("URLSession Error: ", err!)
-                return
-            }
-            print("Response: ", res.debugDescription)
-            if let data = data {
-                if let decoded = try? JSONDecoder().decode(WeatherModel.self, from: data) {
-                    model = decoded
-                } else {
-                    print("Error Occured Decoding Data")
+            DispatchQueue.main.async {
+                if err != nil {
+                    print("URLSession Error: ", err!)
+                    return
                 }
-            } else {
-                print("Error Occured Getting Contents of URL")
+                print("Response: ", res.debugDescription)
+                if let data = data {
+                    if let decoded = try? JSONDecoder().decode(WeatherModel.self, from: data) {
+                        print("Decoded: ", decoded)
+                        model = decoded
+                    }
+                } else {
+                    print("Error Occured Getting Contents of URL")
+                }
+
             }
         }.resume()
+        print("Returning Model with Value: ", model)
+        print("\n------------------------return------------------------")
         return model
+        
     }
     
     init() {

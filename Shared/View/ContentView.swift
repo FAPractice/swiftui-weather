@@ -10,7 +10,6 @@ import SwiftUI
 struct ContentView: View {
     
     @ObservedObject private var weatherController: WeatherController = WeatherController()
-    
     @State private var showingAddSheet = false
     
     var body: some View {

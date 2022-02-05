@@ -7,53 +7,53 @@
 
 import Foundation
 
-struct WeatherModel: Codable {
+
+//  "dt": 1560350645,
+//  "sys": {
+//    "type": 1,
+//    "id": 5122,
+//    "message": 0.0139,
+//    "country": "US",
+//    "sunrise": 1560343627,
+//    "sunset": 1560396563
+//  },
+//  "timezone": -25200,
+//  "id": 420006353,
+//  "name": "Mountain View",
+//  "cod": 200
+
+struct Weather: Decodable {
+    var coord: WeatherCoordinates
+    var weather: WeatherDetails
+    var base: String
+    var main: WeatherMain
+    var visibility: Double
+    var wind: WeatherWind
+    var name: String
     
-//    var id = UUID()
-
-    struct Coordinates: Codable {
-        let lon: Double;
-        let lat: Double;
+    struct WeatherCoordinates: Decodable {
+        var lon: Double
+        var lat: Double
     }
-
-    struct Weather: Codable {
-        let id: Int
-        let main: String
-        let description: String
-        let icon: String
+    
+    struct WeatherDetails: Decodable {
+        var id: Int
+        var main: String
+        var description: String
+        var icon: String
     }
-
-    struct Temperature: Codable {
-        let temp: Double
-        let feels_like: Double
-        let temp_min: Double
-        let temp_max: Double
-        let pressure: Double
-        let humidity: Double
+    
+    struct WeatherMain: Decodable {
+        var temp: Double
+        var feels_like: Double
+        var temp_min: Double
+        var temp_max: Double
+        var pressure: Double
+        var humidity: Double
     }
-
-    struct Wind: Codable {
-        let speed: Double
-        let deg: Double
+    
+    struct WeatherWind: Decodable {
+        var speed: Double
+        var deg: Double
     }
-
-    struct Clouds: Codable {
-        let all: Int
-    }
-
-    struct Sys: Codable {
-        let country: String
-        let sunrise: Int
-        let sunset: Int
-    }
-
-    let coord: Coordinates
-    let weather: [Weather]
-    let main: Temperature
-    let visibility: Int
-    let wind: Wind
-    let clouds: Clouds
-    let sys: Sys
-    let name: String
-
 }
